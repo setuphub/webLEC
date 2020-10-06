@@ -1,5 +1,5 @@
 from django.db import models
-from usuarios.models import Usuario
+#from usuarios.models import Usuario
 
 # Create your models here.
 
@@ -17,7 +17,7 @@ class Post(models.Model):
     fecha_creacion = models.DateTimeField( auto_now=True, auto_now_add=True)
     fecha_modificado = models.DateTimeField( auto_now=True, auto_now_add=True)
     fecha_eliminado = models.DateTimeField( auto_now=False, auto_now_add=False)
-    creado_por = models.ForeignKey(Usuario, blank=False, verbose_name=_("Creado por"), on_delete=models.RESTRICT)
+    #creado_por = models.ForeignKey(Usuario, blank=False, verbose_name=_("Creado por"), on_delete=models.RESTRICT)
 
     class Meta:
         """Meta definition for Post."""
