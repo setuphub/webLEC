@@ -1,5 +1,37 @@
 {% load static %}
 
 {% block footer %}
-    <footer></footer>
+    <footer class="relative object-bottom bg-red p-6 text-white">
+        <div id="tablaLinks" class="">
+            <table class="table-fixed">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2">Enlaces rapidos</th>
+                        <th class="px-4 py-2">Patrocinadores</th>
+                    </tr>
+                </thead>
+                <tbody class="text-white">
+                    <tr class="">
+                        <td class="px-4 py-2"><a href="/">Inicio</a></td>
+                    </tr>
+                    <tr class="">
+                        <td class="px-4 py-2"><a href="/">Foro</a></td>
+                    </tr>
+                    <tr class="">
+                        <td class="px-4 py-2"><a href="/">Noticias</a></td>
+                    </tr>
+                    <tr class="">
+                        <td class="px-4 py-2"><a href="/">Contacto</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div class="relative text-center">
+            <div id="rrss" class="flex flex-shrink flex-wrap ">
+                
+            </div>
+            <p>&copy; Derechos reservados</p>
+        </div>
+    </footer>
 {% endblock footer %}
