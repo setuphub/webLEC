@@ -20,5 +20,5 @@ def index(request):
         form = formulario_login()
     
 
-    #render('GeneralTemplates/loginForm.html',{'form':form})
     return render(request,'GeneralTemplates/loginForm.html', {'form':form})
+
