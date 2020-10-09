@@ -3,10 +3,10 @@
 
 {% block registerForm %}
 
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 px-10 py-10 pt-10 bg-gray-100 ">
-        <p class="font-mono text-lg text-center"><h3>Instrucciones para registro</h3></p>
+    <div class="w-full  px-3 mb-6 md:mb-0 px-10 py-10 pt-10 bg-gray-100 text-center">
+        <p class="font-mono text-lg"><h2>Instrucciones para registro</h2></p>
         <div>
-            <p class="font-mono text-lg text-gray-800 text-justify">-Solo se podrán registrar en este apartado aquellos usuarios que sean jefes de equipo</p>
+            <p class="font-mono text-lg text-gray-800 text-justify">-Solo se podrán registrar en este apartado aquellos usuarios que sean jefes de equipo o representantes del mismo</p>
             <p class="font-mono text-lg text-gray-800 text-justify">-Debe usar su nombre y apellidos reales(No es necesario usar los dos apellidos)</p>
             <p class="font-mono text-lg text-gray-800 text-justify">-<strong>Su nombre de usuario debe ser su id de Playstation Network(PSN)</strong></p>
             <p class="font-mono text-lg text-gray-800 text-justify">-<strong>No usar email de equipo en este formulario.Usar email de contacto personal</strong></p>
@@ -14,8 +14,8 @@
         </div>
     </div>
 
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 px-10 py-10 pt-10">
-        <form class="w-full max-w-lg">
+    <div class="w-1/2 px-3 mb-6 md:mb-0 px-10 py-10 pt-10">
+        <form class="w-full max-w-xl" name="formulario_registro">
             <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="name">
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ">Confirmar</button>
+                <input id="boton_confirmar" type="submit" disabled="disabled" class="cursor-not-allowed bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow " value="Confirmar" />
             </div>
         </form>
     </div>
