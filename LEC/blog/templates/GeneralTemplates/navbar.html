@@ -20,10 +20,18 @@
                 Contacto
                 </a>
             </div>
+            
+            {% if user.is_authenticated %}
+            <div>
+                <span class="font-mono text-lg">{{user.username}}</span>
+                <a href="/logout" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Salir</a>
+            </div>
+            {% else %}
             <div>
                 <a onclick="document.getElementById('id01').style.display='block'"class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Entrar</a>
                 <a href="/usuarios/registro" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Registrar</a>
             </div>
+            {% endif %}
         </div>
     </nav>
 {% endblock navbar %}

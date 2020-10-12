@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login as do_login, logout as do_logout
 from .forms import  formulario_registro, formulario_registro_equipo
 # Create your views here.
 
 def login(request):
 
-    print(request.POST['nombre_usuario'])
+    
     username = request.POST['nombre_usuario']
     password = request.POST['password']
 
@@ -13,10 +13,14 @@ def login(request):
     print(usuario)
 
     if usuario is not None:
-        login(request,usuario)
+        do_login(request, usuario)
         return redirect('index')
     else:
         return redirect('index') 
+
+def logout(request):
+    do_logout(request)
+    return redirect('index')
 
 def registro(request):
     """
@@ -30,7 +34,7 @@ def registro(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return render(request,'blog/blog.html')
+            return redirect('index')
 
     # if a GET (or any other method) we'll create a blank form
     else:
