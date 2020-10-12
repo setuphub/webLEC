@@ -3,4 +3,13 @@
 {% block body %}
     {% block loginForm %}{% endblock loginForm %}
     {% block registerForm %}{% endblock registerForm %}
+    
+    
+    {% if user.is_authenticated %}
+        <p>Hola {{user.username}}</p>
+    {% else %}
+        <p>No esta auntenticado</p>
+    {% endif %}
+        
+        
 {% endblock body %}

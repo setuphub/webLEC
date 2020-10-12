@@ -1,6 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
 from .forms import  formulario_registro, formulario_registro_equipo
 # Create your views here.
+
+def login(request):
+
+    print(request.POST['nombre_usuario'])
+    username = request.POST['nombre_usuario']
+    password = request.POST['password']
+
+    usuario = authenticate(request, username=username, password=password)
+    print(usuario)
+
+    if usuario is not None:
+        login(request,usuario)
+        return redirect('index')
+    else:
+        return redirect('index') 
 
 def registro(request):
     """

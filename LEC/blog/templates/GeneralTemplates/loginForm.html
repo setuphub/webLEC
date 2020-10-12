@@ -2,10 +2,14 @@
 {% load static %}
 
 {% block loginForm %}
+
     <div id="id01" class="w3-modal">
+        
         <div class="w3-modal-content w3-animate-opacity w-full max-w-xs">
+        
             <div class="w3-container ">
-                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/login" method="POST">
+                    {% csrf_token %}
                     {% for campo in form %}
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">{{campo.label_tag}}</label>
@@ -13,13 +17,22 @@
                     </div>
                     {% endfor %}
                     <div class="text-center">
-                        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ">Entrar</button>
+                        <a class=" py-3 cursor-pointer text-sm hover:text-blue-500">¿Recuperar contraseña?</a>
+                    </div><br>
+                    <div class="text-center">
+                        <button type="submit" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ">Entrar</button>
+                        <a class=" cursor-pointer bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ">Cancelar</a>
+                    </div>
+                    <div class="md:flex md:items-center mt-8">
+                        <label class="md:w-2/3 block text-gray-500 font-bold">
+                            <input class="mr-1 leading-tight" type="checkbox">
+                            <span class="text-sm hover:text-gray-800">Recordar datos</span>
+                        </label>
                     </div>
                 </form>
                 <div class= "py-3 text-center">
-                    <a class="">¿Aun no tienes cuenta?</a>
+                    <a href="/usuarios/registro" class="hover:text-blue-500">¿Aun no tienes cuenta?</a>
                 </div>
-                
             </div>
         </div>
     </div>
