@@ -17,7 +17,7 @@ class Post(models.Model):
     fecha_creacion = models.DateTimeField( auto_now_add=True)
     fecha_modificado = models.DateTimeField( auto_now_add=True)
     fecha_eliminado = models.DateTimeField(  auto_now_add=False)
-    creado_por = models.ForeignKey(Usuario, blank=False, verbose_name="Creado por", on_delete=models.RESTRICT)
+    creado_por = models.ForeignKey(Usuario, blank=False, verbose_name="Creado por", on_delete=models.CASCADE)
 
     class Meta:
         """Meta definition for Post."""
