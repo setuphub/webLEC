@@ -1,8 +1,11 @@
 {% extends "GeneralTemplates/index.html" %}
 
+
 {% block body %}
     {% block loginForm %}{% endblock loginForm %}
-    {% block registerForm %}{% endblock registerForm %}
+
+    
+        
     
     
     {% if user.is_authenticated %}
@@ -11,5 +14,62 @@
         <p>No esta auntenticado</p>  
     {% endif %}
         
+    
+    {% block blog %}
+        <div class="ml-8 mr-5 mt-5 container">
+            <div class="flex flex-wrap -mx-1 overflow-hidden sm:-mx-1 md:-mx-2 lg:-mx-8 xl:-mx-8">
+                
+                <!-- Se hace bucle for con un solo div(serian todos los div con las mismas clases para que sean columnas) -->
+                    
+                <div id="{{post.id}}" class=" my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
+                    <div class=" w-full"><!-- Aqui se insertaria la imagen del post -->
+                        <img  src="/media/coche.jpg ">
+                    </div>
+                    <div> <!-- Categoria -> Titulo -> Descripcion  -->
+                        <div class="text-gray-500 font-mono"><!-- Categoria(gtSport,iracing,assetto...) --><p>GTSport</p></div>
+                        <div class="font-serif font-extrabold text-4xl"><!-- Titulo del post --> <p>Titulo del post</p></div>
+                        <div class="font-serif text-gray-600"><!-- Descripcion corta del post --><p>Descripcion del post.Se ve un coche de gtsport como ejemplo</p></div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-sm"><!-- Fecha de publicacion --><p>13/10/2020</p></div>
+                </div>
+
+                <div id="{{post.id}}" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
+                    <div class=" w-full"><!-- Aqui se insertaria la imagen del post -->
+                        <img src="/media/coche.jpg ">
+                    </div>
+                    <div> <!-- Categoria -> Titulo -> Descripcion  -->
+                        <div class="text-gray-500 font-mono"><!-- Categoria(gtSport,iracing,assetto...) --><p>GTSport</p></div>
+                        <div class="font-serif font-extrabold text-4xl"><!-- Titulo del post --> <p>Titulo del post</p></div>
+                        <div class="font-serif text-gray-600"><!-- Descripcion corta del post --><p>Descripcion del post.Se ve un coche de gtsport como ejemplo</p></div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-sm"><!-- Fecha de publicacion --><p>13/10/2020</p></div>
+                </div>
+
+                <div id="{{post.id}}" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
+                    <div class=" w-full"><!-- Aqui se insertaria la imagen del post -->
+                        <img src="/media/coche.jpg ">
+                    </div>
+                    <div> <!-- Categoria -> Titulo -> Descripcion  -->
+                        <div class="text-gray-500 font-mono"><!-- Categoria(gtSport,iracing,assetto...) --><p>GTSport</p></div>
+                        <div class="font-serif font-extrabold text-4xl"><!-- Titulo del post --> <p>Titulo del post</p></div>
+                        <div class="font-serif text-gray-600"><!-- Descripcion corta del post --><p>Descripcion del post.Se ve un coche de gtsport como ejemplo</p></div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-sm"><!-- Fecha de publicacion --><p>13/10/2020</p></div>
+                </div>
+
+                <div id="{{post.id}}" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
+                    <div class=" w-full"><!-- Aqui se insertaria la imagen del post -->
+                        <img src="/media/coche.jpg ">
+                    </div>
+                    <div> <!-- Categoria -> Titulo -> Descripcion  -->
+                        <div class="text-gray-500 font-mono"><!-- Categoria(gtSport,iracing,assetto...) --><p>GTSport</p></div>
+                        <div class="font-serif font-extrabold text-4xl"><!-- Titulo del post --> <p>Titulo del post</p></div>
+                        <div class="font-serif text-gray-600"><!-- Descripcion corta del post --><p>Descripcion del post.Se ve un coche de gtsport como ejemplo</p></div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-sm"><!-- Fecha de publicacion --><p>13/10/2020</p></div>
+                </div>
+            </div>
+        </div>
+    {% endblock blog %}
         
 {% endblock body %}
