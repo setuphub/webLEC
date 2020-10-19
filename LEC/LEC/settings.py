@@ -116,6 +116,11 @@ USE_L10N = True
 USE_TZ = True
 
 
+#Email backend. Encargado de gestionar los emails generados por la aplicion. No usar este backend en produccion. cambiar por SMTP 
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 

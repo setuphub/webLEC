@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import permission_required, login_required
 from usuarios.forms import formulario_login
 
 # Create your views here.
-
 def index(request):
 
     if request.method == 'POST':
@@ -22,3 +22,6 @@ def index(request):
 
     return render(request,'GeneralTemplates/loginForm.html', {'form':form})
 
+@permission_required('blog.can_publish', raise_exception=True)
+def publish_post(request):
+    return redirect(index)

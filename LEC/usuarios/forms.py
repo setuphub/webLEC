@@ -1,21 +1,27 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class formulario_login(forms.Form):
     nombre_usuario = forms.CharField(widget=forms.TextInput(attrs={'id':'username', 'name':'username', 'type':'text', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='Nombre de usuario')
     password = forms.CharField(widget=forms.TextInput(attrs={'id':'password', 'name':'passwd', 'type':'password', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='Contraseña')
 
 
-class formulario_registro(forms.Form):
+class formulario_registro(UserCreationForm):
     """formulario_registro definition."""
 
     # TODO: Define form fields here
 
-    nombre = forms.CharField(widget=forms.TextInput(attrs={'id':'name', 'name':'name', 'type':'text', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='Nombre')
-    apellidos = forms.CharField(widget=forms.TextInput(attrs={'id':'surname', 'name':'surname', 'type':'text', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='Apellidos')
-    nombre_usuario = forms.CharField(widget=forms.TextInput(attrs={'id':'username', 'name':'username', 'type':'text', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='id PSN') #id_psn
+    first_name = forms.CharField(widget=forms.TextInput(attrs={'id':'name', 'name':'name', 'type':'text', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='Nombre')
+    last_name = forms.CharField(widget=forms.TextInput(attrs={'id':'surname', 'name':'surname', 'type':'text', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='Apellidos')
+    username = forms.CharField(widget=forms.TextInput(attrs={'id':'username', 'name':'username', 'type':'text', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='id PSN') #id_psn
     email = forms.EmailField(widget=forms.TextInput(attrs={'id':'email', 'name':'email', 'type':'email', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='email')
-    contraseña = forms.CharField(widget=forms.TextInput(attrs={'id':'password', 'name':'passwd', 'type':'password', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='Contraseña')
-    repetir_contraseña = forms.CharField(widget=forms.TextInput(attrs={'id':'password2', 'name':'passwd2', 'type':'password', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='Repetir contraseña')
+    password1 = forms.CharField(widget=forms.TextInput(attrs={'id':'password', 'name':'passwd', 'type':'password', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='Contraseña')
+    password2 = forms.CharField(widget=forms.TextInput(attrs={'id':'password2', 'name':'passwd2', 'type':'password', 'onKeyup':'checkform()', 'class':'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}), label='Repetir contraseña')
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2' )
 
 class formulario_registro_equipo(forms.Form):
     """formulario_registro_equipo definition."""
