@@ -4,7 +4,7 @@
 Hi {{ user.username }},
 
 Haz click en el siguiente enlace para confirmar tu registro:
+{{dominio}}
 
-
-http://{{ domain }}{% url 'usuarios:activate' uidb64=uid token=token %}
+http://{{ dominio }}{% url 'usuarios:activate' uidb64=uid token=token %}
 {% endautoescape %}

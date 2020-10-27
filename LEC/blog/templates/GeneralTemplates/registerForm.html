@@ -23,14 +23,14 @@
                     {{form.first_name.label}}
                     </label>
                     {{form.first_name}}
-                    {{form.first_name.errors}}
+                    <p class="text-red-500 text-xs italic">{{form.first_name.errors}}</p>
                 </div>
                 <div class="w-full md:w-1/2 px-3">
                     <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="{{form.last_name.id_for_label}}">
                     {{form.last_name.label}}
                     </label>
                     {{form.last_name}}
-                    {{form.last_name.errors}}
+                    <p class="text-red-500 text-xs italic">{{form.last_name.errors}}</p>
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-6">
@@ -39,14 +39,14 @@
                     {{form.username.label}}
                     </label>
                     {{form.username}}
-                    {{form.username.errors}}
+                    <p class="text-red-500 text-xs italic">{{form.username.errors}}</p>
                 </div>
                 <div class="w-full px-3">
                     <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="{{form.email.id_for_label}}">
                     {{form.email.label}}
                     </label>
                     {{form.email}}
-                    {{form.email.errors}}
+                    <p class="text-red-500 text-xs italic">{{form.email.errors}}</p>
                 </div>
                 <div class="w-full px-3">
                     <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="{{form.password1.id_for_label}}">
@@ -59,7 +59,7 @@
                     {{form.password2.label}}
                     </label>
                     {{form.password2}}
-                    {{form.password2.errors}}
+                    <p class="text-red-500 text-xs italic"s>{{form.password2.errors}}</p>
                 </div>
             </div>
             <div class="text-center">
