@@ -18,13 +18,13 @@
                 
                 <!-- Se hace bucle for con un solo div(serian todos los div con las mismas clases para que sean columnas) -->
                 {% for post in entradas  %}
-                    <div id="{{post.id}}" class=" my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
+                    <div id="{{post.count}}" onclick="window.location.href = 'blog/articulo/{{post.id}}';" class=" cursor-pointer post-hover my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-5/12">
                         <div class=" w-full"><!-- Aqui se insertaria la imagen del post -->
-                            <img  src="{{post.imagen.url}}">
+                            <img src="{{post.imagen.url}}" class="mt-5">
                         </div>
-                        <div> <!-- Categoria -> Titulo -> Descripcion  -->
+                        <div class="w-full text-justify cursor-pointer"> <!-- Categoria -> Titulo -> Descripcion  -->
                             <div class="text-gray-500 font-mono"><!-- Categoria(gtSport,iracing,assetto...) --><p>{{post.categoria}}</p></div>
-                            <div class="font-serif font-extrabold text-4xl"><!-- Titulo del post --> <p>{{post.titulo}}</p></div>
+                            <div class="font-serif font-extrabold sm:text-sm xl:text-4xl post-titulo"><!-- Titulo del post --> <a href="#">{{post.titulo}}</a></div>
                             <div class="font-serif text-gray-600"><!-- Descripcion corta del post --><p>{{post.subtitulo}}</p></div>
                         </div>
                         <div class="font-mono text-gray-400 text-sm"><!-- Fecha de publicacion --><p>{{post.fecha_modificado}}</p></div>

@@ -1,0 +1,11 @@
+{% extends "GeneralTemplates/index.html" %}{% load static %}
+
+{% block body %}
+    {% if error == True %}
+    <h1>Error al cargar</h1>
+    {{request}}
+    {% else %}
+    <h2>{{post.titulo}}</h2>
+    {% endif %}
+{% endblock body %}
+

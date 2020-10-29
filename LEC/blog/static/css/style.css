@@ -12,3 +12,21 @@ hr{
 .bg-red{
     background-color: var(--rojoLEC);
 }
+
+.text-red{
+    color: var(--rojoLEC);
+}
+
+
+
+.post-hover:hover{
+    transition: .2s all ease-in-out;
+    background: linear-gradient(130deg, #FFE14D 0%, #E6BF00 100%);
+    box-shadow: none;
+    color: white;
+    
+}
+
+.post-titulo:hover{
+    color: var(--rojoLEC);
+}

@@ -17,6 +17,7 @@ def activation_sent_view(request):
 
 def login(request):
 
+    do_logout(request)
     username = request.POST['nombre_usuario']
     password = request.POST['password']
 

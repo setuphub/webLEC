@@ -18,3 +18,7 @@ function checkform()
 
     }
 }
+
+function postClick(){
+    console.log("hola");
+}
