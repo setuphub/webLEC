@@ -24,13 +24,13 @@ def post(request,id): #No manda el objeto en el contexto
     print(id)
 
     try:
-        post = Post.objects.filter(Q(id = id))
+        post = Post.objects.get(Q(id = id))
     except:
         error = True
         context.update({'error': error})
         return render(request, 'blog/post.html', context)
 
-    print(post.id)
+    print(post.fecha_modificado)
     context.update({'post': post})
     return render(request, 'blog/post.html', context)
 

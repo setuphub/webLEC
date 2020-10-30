@@ -1,11 +1,46 @@
 {% extends "GeneralTemplates/index.html" %}{% load static %}
 
 {% block body %}
+
     {% if error == True %}
-    <h1>Error al cargar</h1>
-    {{request}}
+        <h1>Error al cargar</h1>
     {% else %}
-    <h2>{{post.titulo}}</h2>
+        <div class="container"> <!--contenedor del post -->
+            <div class="flex flex-wrap justify-center mt-12">
+                <img src="{{post.imagen.url}}" class="my-5 w-4/5">
+            </div>
+            <div class="w-full text-justify">
+                <div class="text-center">
+                    <h2>{{post.titulo}}</h2>
+                </div>
+                <div class=" text-gray-500 text-center my-1">
+                    <p class=""><i>{{post.subtitulo}}</i></p>
+                </div>
+                <div class=" mt-5 mb-10 ">
+                    <p class="text-justify">{{post.cuerpo}}</p>
+                </div>
+            </div>
+            <div>
+                <hr>
+                <div class="flex flex-wrap my-5 text-gray-500">
+                    <div class="">
+                        <p><i>Editado por: {{post.creado_por.user.first_name}} {{post.creado_por.user.last_name}}</i></p>
+                    </div>
+                    <div class="flex flex-wrap mx-10 text-right">
+                        <div class="">
+                            <a class="" href="https://twitter.com/share?url=192.168.254.130:8000&amp;text={{post.titulo}}&amp;hashtags={{post.categoria}}" target="_blank">
+                                <img class="share-buttons" src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                            </a>
+                        </div>
+                        <div class="">
+                            <a href="http://www.facebook.com/sharer.php?u=http://192.168.254.130:8000{{request.get_full_path}}" target="_blank">
+                                <img class="share-buttons" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endif %}
 {% endblock body %}
 

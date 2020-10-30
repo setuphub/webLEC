@@ -30,3 +30,10 @@ hr{
 .post-titulo:hover{
     color: var(--rojoLEC);
 }
+
+.share-buttons{
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+}
