@@ -15,7 +15,7 @@ CATEGORIAS  = [
     ('SR', 'SimRacing')
 ]
 
-class Post(models.Model):
+class Entrada(models.Model):
     """Model definition for Post."""
 
     # Define fields here
@@ -34,8 +34,8 @@ class Post(models.Model):
     class Meta:
         """Meta definition for Post."""
 
-        verbose_name = 'Post'
-        verbose_name_plural = 'Posts'
+        verbose_name = 'Entrada'
+        verbose_name_plural = 'Entradas'
         get_latest_by = "-fecha_modificado"
         ordering = ['-fecha_modificado']
         indexes = [models.Index(fields=['creado_por'], name="creador_por")]

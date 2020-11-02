@@ -1,0 +1,33 @@
+{% extends "GeneralTemplates/index.html" %}
+{% load static %}
+
+
+{% block body %}
+
+    <div>
+        <div class="mx-auto my-0 ">
+            <ul class="px-10 my-24  border-solid border-red border-4 rounded-xl text-center ">
+                {% if categorias %}
+
+                    {% for categoria in categorias %}
+                        <li class="my-10 bg-gray-200 h-10 w-1/2 "><a href="/foro/{{categoria.Titulo}}" class="align-middle">{{categoria.Titulo}}</a></li>
+                    {% endfor %}
+
+                {% elif subcategorias %}
+                    {% for subcategoria in subcategorias %}
+                        <li class="my-10 bg-gray-200 h-10 w-1/2 "><a href="/foro/1/{{subcategoria.Titulo}}" class="align-middle">{{subcategoria.Titulo}}</a></li>
+                    {% endfor %}
+
+                {% else %}
+
+                    <h2>Nada que mostrar</h2>
+
+                {% endif %}
+                
+                
+            </ul>
+        </div>
+    </div>
+    
+{% endblock body %}
+    

@@ -19,15 +19,14 @@ hr{
 
 
 
-.post-hover:hover{
+.entrada-hover:hover{
     transition: .2s all ease-in-out;
     background: linear-gradient(130deg, #FFE14D 0%, #E6BF00 100%);
     box-shadow: none;
     color: white;
-    
 }
 
-.post-titulo:hover{
+.entrada-titulo:hover{
     color: var(--rojoLEC);
 }
 
@@ -36,4 +35,8 @@ hr{
     padding: 5px;
     border: 0;
     box-shadow: 0;
+}
+
+.border-red{
+    border-color: var(--rojoLEC);
 }

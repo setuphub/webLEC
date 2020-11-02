@@ -17,17 +17,17 @@
             <div class="flex flex-wrap -mx-1 overflow-hidden sm:-mx-1 md:-mx-2 lg:-mx-8 xl:-mx-8">
                 
                 <!-- Se hace bucle for con un solo div(serian todos los div con las mismas clases para que sean columnas) -->
-                {% for post in entradas  %}
-                    <div id="{{post.count}}" onclick="window.location.href = 'blog/articulo/{{post.id}}';" class=" cursor-pointer post-hover my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-5/12">
-                        <div class=" w-full"><!-- Aqui se insertaria la imagen del post -->
-                            <img src="{{post.imagen.url}}" class="mt-5">
+                {% for entrada in entradas  %}
+                    <div id="{{entrada.count}}" onclick="window.location.href = 'blog/articulo/{{entrada.id}}';" class=" cursor-pointer entrada-hover my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-5/12">
+                        <div class=" w-full"><!-- Aqui se insertaria la imagen del entrada -->
+                            <img src="{{entrada.imagen.url}}" class="mt-5">
                         </div>
                         <div class="w-full text-justify cursor-pointer"> <!-- Categoria -> Titulo -> Descripcion  -->
-                            <div class="text-gray-500 font-mono"><!-- Categoria(gtSport,iracing,assetto...) --><p>{{post.categoria}}</p></div>
-                            <div class="font-serif font-extrabold sm:text-sm xl:text-4xl post-titulo"><!-- Titulo del post --> <a href="#">{{post.titulo}}</a></div>
-                            <div class="font-serif text-gray-600"><!-- Descripcion corta del post --><p>{{post.subtitulo}}</p></div>
+                            <div class="text-gray-500 font-mono"><!-- Categoria(gtSport,iracing,assetto...) --><p>{{entrada.categoria}}</p></div>
+                            <div class="font-serif font-extrabold sm:text-sm xl:text-4xl entrada-titulo"><!-- Titulo del entrada --> <a href="#">{{entrada.titulo}}</a></div>
+                            <div class="font-serif text-gray-600"><!-- Descripcion corta del entrada --><p>{{entrada.subtitulo}}</p></div>
                         </div>
-                        <div class="font-mono text-gray-400 text-sm"><!-- Fecha de publicacion --><p>{{post.fecha_modificado}}</p></div>
+                        <div class="font-mono text-gray-400 text-sm"><!-- Fecha de publicacion --><p>{{entrada.fecha_modificado}}</p></div>
                     </div>
                 {% endfor %}    
             </div>
@@ -38,38 +38,38 @@
 
 
 {% comment %}
-                    <div id="{{post.id}}" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
-                        <div class=" w-full"><!-- Aqui se insertaria la imagen del post -->
+                    <div id="{{entrada.id}}" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
+                        <div class=" w-full"><!-- Aqui se insertaria la imagen del entrada -->
                             <img src="/media/coche.jpg ">
                         </div>
                         <div> <!-- Categoria -> Titulo -> Descripcion  -->
                             <div class="text-gray-500 font-mono"><!-- Categoria(gtSport,iracing,assetto...) --><p>GTSport</p></div>
-                            <div class="font-serif font-extrabold text-4xl"><!-- Titulo del post --> <p>Titulo del post</p></div>
-                            <div class="font-serif text-gray-600"><!-- Descripcion corta del post --><p>Descripcion del post.Se ve un coche de gtsport como ejemplo</p></div>
+                            <div class="font-serif font-extrabold text-4xl"><!-- Titulo del entrada --> <p>Titulo del entrada</p></div>
+                            <div class="font-serif text-gray-600"><!-- Descripcion corta del entrada --><p>Descripcion del entrada.Se ve un coche de gtsport como ejemplo</p></div>
                         </div>
                         <div class="font-mono text-gray-400 text-sm"><!-- Fecha de publicacion --><p>13/10/2020</p></div>
                     </div>
     
-                    <div id="{{post.id}}" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
-                        <div class=" w-full"><!-- Aqui se insertaria la imagen del post -->
+                    <div id="{{entrada.id}}" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
+                        <div class=" w-full"><!-- Aqui se insertaria la imagen del entrada -->
                             <img src="/media/coche.jpg ">
                         </div>
                         <div> <!-- Categoria -> Titulo -> Descripcion  -->
                             <div class="text-gray-500 font-mono"><!-- Categoria(gtSport,iracing,assetto...) --><p>GTSport</p></div>
-                            <div class="font-serif font-extrabold text-4xl"><!-- Titulo del post --> <p>Titulo del post</p></div>
-                            <div class="font-serif text-gray-600"><!-- Descripcion corta del post --><p>Descripcion del post.Se ve un coche de gtsport como ejemplo</p></div>
+                            <div class="font-serif font-extrabold text-4xl"><!-- Titulo del entrada --> <p>Titulo del entrada</p></div>
+                            <div class="font-serif text-gray-600"><!-- Descripcion corta del entrada --><p>Descripcion del entrada.Se ve un coche de gtsport como ejemplo</p></div>
                         </div>
                         <div class="font-mono text-gray-400 text-sm"><!-- Fecha de publicacion --><p>13/10/2020</p></div>
                     </div>
     
-                    <div id="{{post.id}}" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
-                        <div class=" w-full"><!-- Aqui se insertaria la imagen del post -->
+                    <div id="{{entrada.id}}" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/2 xl:my-2 xl:px-8 xl:w-1/2">
+                        <div class=" w-full"><!-- Aqui se insertaria la imagen del entrada -->
                             <img src="/media/coche.jpg ">
                         </div>
                         <div> <!-- Categoria -> Titulo -> Descripcion  -->
                             <div class="text-gray-500 font-mono"><!-- Categoria(gtSport,iracing,assetto...) --><p>GTSport</p></div>
-                            <div class="font-serif font-extrabold text-4xl"><!-- Titulo del post --> <p>Titulo del post</p></div>
-                            <div class="font-serif text-gray-600"><!-- Descripcion corta del post --><p>Descripcion del post.Se ve un coche de gtsport como ejemplo</p></div>
+                            <div class="font-serif font-extrabold text-4xl"><!-- Titulo del entrada --> <p>Titulo del entrada</p></div>
+                            <div class="font-serif text-gray-600"><!-- Descripcion corta del entrada --><p>Descripcion del entrada.Se ve un coche de gtsport como ejemplo</p></div>
                         </div>
                         <div class="font-mono text-gray-400 text-sm"><!-- Fecha de publicacion --><p>13/10/2020</p></div>
                     </div>
